@@ -15,15 +15,36 @@ public class LinkedStack implements Stack{
 		newNode.data = item;
 		newNode.link = top;
 		top = newNode;
-		System.out.println("Inserted Item : " +item);
+		//System.out.println("Inserted Item : " +item);
 	} //push
+	
+	public void push(int item) {
+		StackNode newNode = new StackNode();
 
+		newNode.dataInt = item;
+		newNode.link = top;
+		top = newNode;
+	}
+ 
 	public char pop() {
 		if(isEmpty()) {
 			System.out.println("Deleting fail! Linked Stack is empty!!!");
 			return 0;
 		} else {
 			char item = top.data;
+			//top의 링크는 먼저 들어간 노드의 주소값으로 되어있다.
+			top = top.link;
+			//top에 있던 노드의 data 값을 반환한다...
+			return item;
+		}
+	} //pop
+	
+	public int pop2() {
+		if(isEmpty()) {
+			System.out.println("Deleting fail! Linked Stack is empty!!!");
+			return 0;
+		} else {
+			int item = top.dataInt;
 			//top의 링크는 먼저 들어간 노드의 주소값으로 되어있다.
 			top = top.link;
 			//top에 있던 노드의 data 값을 반환한다...
