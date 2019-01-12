@@ -3,7 +3,7 @@ package chapter7;
 public class LinkedStack implements Stack{
 
 	private StackNode top;
-	
+	private int stackSize;
 	
 	public boolean isEmpty() {
 		return (top == null);
