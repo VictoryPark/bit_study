@@ -35,7 +35,7 @@ public class Heap {
 		parent = 1;
 		child = 2;
 		
-		//자식노드가 힙 사이즈보다 같을때까지 비교..
+		//자식노드가 힙 사이즈보다 크기 전까지 비교..
 		while(child <= heapSize) {
 			//현재 노드의 왼쪽 오른쪽 노드의 원소 크기 비교..
 			if((child < heapSize) && 
