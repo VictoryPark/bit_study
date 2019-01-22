@@ -13,8 +13,8 @@ public class QuickSort {
 		
 		// L과 R 이 같이 위치가 되기 전까지 반복...
 		while(L<R) {
-			while((a[L] < a[pivot]) && (L<R))  L++;
-			while((a[R] >= a[pivot]) && (L<R))  R--;
+			while((a[L] < a[pivot]) && (L < R))  L++;
+			while((a[R] >= a[pivot]) && (L < R))  R--;
 			if(L<R) {
 				temp = a[L];
 				a[L] = a[R];
