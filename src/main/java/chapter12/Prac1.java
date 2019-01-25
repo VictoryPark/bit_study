@@ -53,7 +53,7 @@ public class Prac1 {
 	} //main
 
 	private static int binarySearch(int[] arr, int begin, int end, int key) {
-		//if(begin > end) return 0;
+		if(begin > end) return 0;
 		int middle = (begin+end)/2;
 		
 		if(key == arr[middle]) {
