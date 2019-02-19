@@ -13,7 +13,7 @@ public class EstSoft_2 {
 	static int[] C = {0,1,2,3,4,5,6,7,8,9,11,12,13,14,10};
 	
 	public static void main(String[] args) {
-		System.out.println(solution(C));
+		System.out.println(solution(B));
 	}
 	public static int solution(int[] A) {
 		int answer = 0;
@@ -35,16 +35,10 @@ public class EstSoft_2 {
 			if(nextBead == i) { 	//A[3] = 3 의 상황..구슬이 1개인 목걸이..
 				sizeList.add(1);
 				AList.remove(AList.indexOf(i));
-				if(AList.size()==0) break;
-				
-				i = AList.get(0);
 			} else if(A[nextBead]==i) {		//A[1] = 4 의 상황, A[4]=1의 상황..구슬이 2개인 목걸이..
 				sizeList.add(2);
 				AList.remove(AList.indexOf(nextBead));
 				AList.remove(AList.indexOf(i));
-				
-				if(AList.size()==0) break;
-				i = AList.get(0);
 			} else {
 				beadSet.add(nextBead);	//5
 				AList.remove(AList.indexOf(i));	//0번 인덱스 지움..
@@ -53,13 +47,14 @@ public class EstSoft_2 {
 					nextBead = A[nextBead];	//6,2,0
 					beadSet.add(nextBead);	//6,2,0
 				} //nextBead 값이 맨처음 i 값으로 돌아올때까지 반복..set에는 bead 값 쌓임..
-				sizeList.add(beadSet.size());
 				
-				if(AList.size()==0) break;
-				i = AList.get(0);
+				sizeList.add(beadSet.size());
 			} //if else..
 			
+			if(AList.size()==0) break;
+			i = AList.get(0);
 		}//AList 사이즈가 0이 될때까지 반복..
+		
 		Collections.sort(sizeList);
 		answer = sizeList.get(sizeList.size()-1);
 		return answer;
